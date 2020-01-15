@@ -1,25 +1,30 @@
 <template>
   <div id="small-img">
-      <div v-if="content[0].isBig"  class="big-img">
-            <img :src="content[0].url" alt="">
-            <p class="video-title">
-                    {{content[0].title}}
-            </p>
-            <p class="video-decoration">
-                {{content[0].content}}
-            </p>
-      </div>
       <ul class="video-list">
-          <li class="video" v-for="item in smallVideoList" :key="item.id">
-                <img :src="item.url" alt="">
+          <!-- 通过判断isBig来决定大小图 -->
+          <li
+          :class="{'video':!item.isBig,'largeimg':item.isBig}"
+          v-for="item in smallVideoList"
+          :key="item.id" >
+                <!-- 图片里包着一个标签 -->
+                <div class="img-container">
+                    <img :src="item.url" alt="" >
+                    <span class="label" v-if="item.labelType === 0">全{{item.label}}集</span>
+                    <span class="label" v-if="item.labelType === 1">更新至{{item.label}}集</span>
+                    <span class="label" v-if="item.labelType === 2">{{item.label}}</span>
+                </div>
+                <!-- 视频名称 -->
                 <p class="video-title">
                     {{item.title}}
                 </p>
+                <!-- 视频描述 -->
                 <p class="video-decoration">
                     {{item.content}}
                 </p>
+
           </li>
       </ul>
+      <!-- 通过refresh判断是否需要添加刷新按钮 -->
       <div class='refresh' v-if="refresh">
             <font-awesome-icon class="icon" icon="sync-alt" />
             <span>换一换</span>
@@ -32,11 +37,11 @@ export default {
     name: 'SmallImg',
     props: {
         content: Array,
-        refresh: Array
+        refresh: Boolean
     },
     data(){
         return{
-            smallVideoList: this.content[0].isBig ? this.content.slice(1, this.content.length) : this.content
+            smallVideoList: this.content
         }
     },
     created(){
@@ -51,10 +56,25 @@ export default {
         .big-img{
             width: 100%;
             margin-top: 5px;
-            img{
-                width: 100%;
-                height: 190px;
-            }
+             .img-container{
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 190px;
+                    }
+                    .label{
+                        position: absolute;
+                        bottom: 4px;
+                        right: 2px;
+                        padding: 2px 3px;
+                        background-color:rgba(162,162,182,.5);
+                        color:#fff;
+                        font-size: 10px;
+                        border-radius: 2px;
+
+                    }
+                }
+            
             p{
                 margin: 0;
                 width: 100%;
@@ -87,9 +107,23 @@ export default {
                 width: 47%;
                 box-sizing: border-box;
                 margin-bottom: 5px;
-                img{
-                    height: 95px;
-                    width: 100%;
+                .img-container{
+                    position: relative;
+                    img{
+                        height: 95px;
+                        width: 100%;
+                    }
+                    .label{
+                        position: absolute;
+                        bottom: 4px;
+                        right: 2px;
+                        padding: 2px 3px;
+                        background-color:rgba(162,162,182,.5);
+                        color:#fff;
+                        font-size: 10px;
+                        border-radius: 2px;
+
+                    }
                 }
                 p{
                     margin: 0;
@@ -110,7 +144,51 @@ export default {
                     font-size: 12px;
                     line-height: 18px;
                 }
+                
             }
+            .largeimg{
+                    width: 100%;
+                    list-style: none;
+                    box-sizing: border-box;
+                    margin-bottom: 5px;
+                     .img-container{
+                    position: relative;
+                    img{
+                        height: 190px;
+                        width: 100%;
+                    }
+                    .label{
+                        position: absolute;
+                        bottom: 4px;
+                        right: 2px;
+                        padding: 2px 3px;
+                        background-color:rgba(162,162,182,.5);
+                        color:#fff;
+                        font-size: 10px;
+                        border-radius: 2px;
+
+                    }
+                }
+                p{
+                    margin: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .video-title{
+                    margin-top: 6px;
+                    color: #000028;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                .video-decoration{
+                    margin-top: 4px;
+                    color: #a2a2b6;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+                }
         }
         .refresh{
             height: 20px;

@@ -1,11 +1,15 @@
 <template>
     <div id="select">
+        <!-- 轮播图 -->
         <div class="swiper">
             <big-swiper :content="bigFrameContent"></big-swiper>
         </div>
+        <!-- 通过一个vfor多次调用视频组件，简单干净 -->
         <ul>
             <li v-for="(videoListItem,index) in  videoList " :key="index">
+                <!-- 分类标题 -->
                 <list-title>{{titleList[index]}}</list-title>
+                <!-- 内容 -->
                 <small-img
                 :content="videoList[index]"
                 :refresh="whetherRefresh[index]"
@@ -28,6 +32,7 @@ export default {
     },
     data(){
         return{
+            // 轮播图内容
             bigFrameContent: [
                 {
                     id: 0,
@@ -55,19 +60,24 @@ export default {
                     content: '【庆余年】超前看结局 第二季的伏笔你get了吗'
                 }
             ],
+            // 视频图片
             videoList: [
                 [
                     {
                         id: 0,
                         url: 'http://puui.qpic.cn/vcover_hz_pic/0/rjae621myqca41h1574825567/0',
                         title: '庆余年',
-                        content: '张若昀身陷棋局绝处逢生'
+                        content: '张若昀身陷棋局绝处逢生',
+                        labelType: 0,
+                        label: 46
                     },
                     {
                         id: 1,
                         url: 'http://puui.qpic.cn/vcover_hz_pic/0/mzc00200bqxuhqe1576553844/0',
                         title: '精英律师',
-                        content: '靳东携律政精英神仙打架'
+                        content: '靳东携律政精英神仙打架',
+                        labelType: 0,
+                        label: 45
                     }
                 ],
                 [
@@ -75,25 +85,33 @@ export default {
                         id: 0,
                         url: 'http://puui.qpic.cn/tv/0/495569203_498280/0',
                         title: '新世界·新剧首播',
-                        content: '孙红雷结识民国五美闯北平'
+                        content: '孙红雷结识民国五美闯北平',
+                        labelType: 1,
+                        label: 36
                     },
                     {
                         id: 1,
                         url: 'http://puui.qpic.cn/tv/0/496546186_498280/0',
                         title: 'Beauty小姐·宋轶剧透',
-                        content: '《庆余年2》言冰云黑化？'
+                        content: '《庆余年2》言冰云黑化？',
+                        labelType: 1,
+                        label: 4
                     },
                     {
                         id: 2,
                         url: 'http://puui.qpic.cn/tv/0/495776747_498280/0',
                         title: '毒战生死线2·新片首播',
-                        content: '缉毒警枪林弹雨中血拼毒贩'
+                        content: '缉毒警枪林弹雨中血拼毒贩',
+                        labelType: 2,
+                        label: '2020-01-14'
                     },
                     {
                         id: 3,
                         url: 'http://puui.qpic.cn/tv/0/496506313_498280/0',
                         title: '吐槽大会4·还珠格格',
-                        content: '卡姆模仿容嬷嬷吐槽陈志朋'
+                        content: '卡姆模仿容嬷嬷吐槽陈志朋',
+                        labelType: 2,
+                        label: '2020-01-04'
                     },
                     {
                         id: 4,
@@ -114,20 +132,26 @@ export default {
                         url: 'http://puui.qpic.cn/tv/0/491814654_498280/0',
                         title: '斗罗大陆',
                         content: '艰难对战！小舞受伤',
-                        isBig: true
+                        isBig: true,
+                        labelType: 1,
+                        label: 10
 
                     },
                     {
                         id: 1,
                         url: 'http://puui.qpic.cn/tv/0/485894988_498280/0',
                         title: '墓王之王',
-                        content: '群蛇围攻，少女被逼跳崖'
+                        content: '群蛇围攻，少女被逼跳崖',
+                        labelType: 0,
+                        label: 10
                     },
                     {
                         id: 2,
                         url: 'http://puui.qpic.cn/tv/0/480056045_498280/0',
                         title: '假面骑士零一',
-                        content: '我的强大超乎寻常'
+                        content: '我的强大超乎寻常',
+                        labelType: 0,
+                        label: 20
                     }
                 ],
                 [
@@ -148,6 +172,7 @@ export default {
                 ]
                 
             ],
+            // 视频标题
             titleList: [
                 '猜你会追',
                 '重磅♨LPL春季赛：eStar拿下首胜',
@@ -155,8 +180,9 @@ export default {
                 '少儿精选剧场',
                 '热门综艺☀《终极高手2》即将开播'
             ],
+            // 是否添加刷新按钮
             whetherRefresh: [
-                false, true, false, true
+                false, true, false, true, true
             ]
         }
     }
