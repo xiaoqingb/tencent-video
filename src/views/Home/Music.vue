@@ -1,5 +1,5 @@
 <template>
-    <div id="movie">
+    <div id="music">
         <!-- 轮播图 -->
         <div class="swiper">
             <big-swiper :content="bigFrameContent"></big-swiper>
@@ -24,7 +24,7 @@ import BigSwiper from '@/components/BigSwiper'
 import SmallImg from '@/components/SmallImg'
 import ListTitle from '@/components/ListTitle'
 export default {
-    name: 'Movie',
+    name: 'Music',
     components: {
         BigSwiper,
         SmallImg,
@@ -257,7 +257,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-    #movie{
+    #music{
         ul{
             list-style: none;
             margin: 0;

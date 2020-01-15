@@ -11,6 +11,10 @@ Vue.config.productionTip = false
 library.add(...Object.values(FaIcons))
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(VueAwesomeSwiper)
+// 页面滚动至顶部
+router.afterEach((to, from, next) => {
+    window.scrollTo(0, 0)
+})
 new Vue({
     router,
     render: h => h(App)

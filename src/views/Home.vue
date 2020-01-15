@@ -40,6 +40,14 @@
 export default {
     name: 'Home',
     created(){
+        if(this.$route.name){
+            this.focusList = []
+            this.typeList.map(item=>{
+                if(item.label.toLowerCase() === this.$route.name.toLowerCase()){
+                    this.focusList[item.id] = true
+                }
+            })
+        }
     },
     data(){
         return{
@@ -63,42 +71,37 @@ export default {
                 {
                     id: 2,
                     name: '电视剧',
-                    label: 'Movie'
+                    label: 'TV'
                 },
                 {
                     id: 3,
                     name: '综艺',
-                    label: 'Select'
+                    label: 'Variety'
                 },
                 {
                     id: 4,
                     name: '动漫',
-                    label: 'Select'
+                    label: 'Comic'
                 },
                 {
                     id: 5,
                     name: '娱乐',
-                    label: 'Select'
+                    label: 'Entertainment'
                 },
                 {
                     id: 6,
                     name: '潮音',
-                    label: 'Select'
+                    label: 'Music'
                 },
                 {
                     id: 7,
                     name: '游戏',
-                    label: 'Select'
+                    label: 'Game'
                 },
                 {
                     id: 8,
                     name: '纪录片',
-                    label: 'Select'
-                },
-                {
-                    id: 9,
-                    name: '战争片',
-                    label: 'Select'
+                    label: 'Documentary'
                 }
             ],
             focusList: [true]

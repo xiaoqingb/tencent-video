@@ -1,5 +1,5 @@
 <template>
-    <div id="select">
+    <div id="entertainment">
         <!-- 轮播图 -->
         <div class="swiper">
             <big-swiper :content="bigFrameContent"></big-swiper>
@@ -24,7 +24,7 @@ import BigSwiper from '@/components/BigSwiper'
 import SmallImg from '@/components/SmallImg'
 import ListTitle from '@/components/ListTitle'
 export default {
-    name: 'Select',
+    name: 'Entertainment',
     components: {
         BigSwiper,
         SmallImg,
@@ -194,7 +194,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-    #select{
+    #entertainment{
         ul{
             list-style: none;
             margin: 0;

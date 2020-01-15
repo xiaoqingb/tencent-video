@@ -72,6 +72,7 @@ export default {
       font-size: 14px;
       height: 40px;
       line-height: 40px;
+      background: #eaebec;
     }
 
 }

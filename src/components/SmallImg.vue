@@ -3,7 +3,9 @@
       <ul class="video-list">
           <!-- 通过判断isBig来决定大小图 -->
           <li
-          :class="{'video':!item.isBig,'largeimg':item.isBig}"
+          :class="{ 'video':!item.isBig && !item.isLong,
+                    'largeimg':item.isBig,
+                    'longimg':item.isLong}"
           v-for="item in smallVideoList"
           :key="item.id" >
                 <!-- 图片里包着一个标签 -->
@@ -12,6 +14,7 @@
                     <span class="label" v-if="item.labelType === 0">全{{item.label}}集</span>
                     <span class="label" v-if="item.labelType === 1">更新至{{item.label}}集</span>
                     <span class="label" v-if="item.labelType === 2">{{item.label}}</span>
+                    <span class="label" v-if="item.labelType === 3">{{item.label}}</span>
                 </div>
                 <!-- 视频名称 -->
                 <p class="video-title">
@@ -45,7 +48,7 @@ export default {
         }
     },
     created(){
-        console.log(this.content)
+        // console.log(this.content)
     }
 }
 </script>
@@ -101,7 +104,13 @@ export default {
             flex-wrap: wrap;
             justify-content: space-between;
             padding: 0;
+            width: 100%;
             margin: 10px 0 0 0;
+            ul{
+                list-style: none;
+                box-sizing: border-box;
+                margin-bottom: 5px;
+            }
             .video{
                 list-style: none;
                 width: 47%;
@@ -147,11 +156,8 @@ export default {
                 
             }
             .largeimg{
-                    width: 100%;
-                    list-style: none;
-                    box-sizing: border-box;
-                    margin-bottom: 5px;
-                     .img-container{
+                width: 100%;
+                .img-container{
                     position: relative;
                     img{
                         height: 190px;
@@ -166,7 +172,6 @@ export default {
                         color:#fff;
                         font-size: 10px;
                         border-radius: 2px;
-
                     }
                 }
                 p{
@@ -188,7 +193,45 @@ export default {
                     font-size: 12px;
                     line-height: 18px;
                 }
+            }
+            .longimg{
+                width: 32%;
+                .img-container{
+                    position: relative;
+                    img{
+                        width: 100%;
+                    }
+                    .label{
+                        position: absolute;
+                        bottom: 4px;
+                        right: 2px;
+                        padding: 2px 3px;
+                        background-color:rgba(162,162,182,.5);
+                        color:#fff;
+                        font-size: 10px;
+                        border-radius: 2px;
+                    }
                 }
+                p{
+                    margin: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .video-title{
+                    margin-top: 6px;
+                    color: #000028;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                .video-decoration{
+                    margin-top: 4px;
+                    color: #a2a2b6;
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+            }
         }
         .refresh{
             height: 20px;

@@ -66,12 +66,14 @@ export default {
     }
     /deep/.swiper-pagination{
       position: absolute;
+      z-index: 11;
       left:85%;
       bottom: 0;
       width: 20%;
       font-size: 14px;
       height: 40px;
       line-height: 40px;
+      background: #eaebec;
     }
 
 }
