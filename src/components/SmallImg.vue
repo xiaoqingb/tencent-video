@@ -7,7 +7,8 @@
                     'largeimg':item.isBig,
                     'longimg':item.isLong}"
           v-for="item in smallVideoList"
-          :key="item.id" >
+          :key="item.id"
+          @click="play()">
                 <!-- 图片里包着一个标签 -->
                 <div class="img-container">
                     <img :src="item.url" alt="" >
@@ -49,6 +50,11 @@ export default {
     },
     created(){
         // console.log(this.content)
+    },
+    methods: {
+        play(){
+            this.$router.push({ name: 'Play' })
+        }
     }
 }
 </script>

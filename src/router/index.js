@@ -71,6 +71,7 @@ const routes = [
         ]
     },
     {
+        name: 'Play',
         path: '/play',
         component: () => import('@/views/Play.vue')
     }
