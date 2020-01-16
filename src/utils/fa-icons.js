@@ -1,4 +1,6 @@
 export {
     faSearch,
-    faSyncAlt
+    faSyncAlt,
+    faHeart,
+    faDownload
 } from '@fortawesome/free-solid-svg-icons'

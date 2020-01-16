@@ -2,7 +2,10 @@
   <div id="advertisement-swiper">
     <swiper id="swiper-container" :options="swiperOption">
       <swiper-slide class="slide-item" v-for="item in content" :key="item.id">
-        <img :src="item.url" alt="">
+        <img
+        :src="item.url"
+        :class="{'rectangle':!item.isSquare, 'square': item.isSquare}"
+        alt="">
         <p>{{item.content}}</p>
         <div class="open-app-btn">
             打开
@@ -48,7 +51,7 @@ export default {
         padding: 0 1px;
         height: 100%;
         /deep/.swiper-pagination-bullet-active {
-            width: .8rem !important;
+            width: 1rem !important;
             background: rgb(255, 96, 34);
             border-radius: 5px;
 
@@ -56,21 +59,31 @@ export default {
         .slide-item{
             // width: 100%;
             box-sizing: border-box;
-            padding: 0 10px;
+            padding: 5px 10px;
             display: flex;
             align-items: center;
-          img{
+          .rectangle{
             width: 85px;
             height: 48px;
             border-radius: 5px;
           }
+          .square{
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+          }
           p{
             height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: start;
             flex: 1;
             font-size: 14px;
+            padding: 0 5px ;
+            box-sizing: border-box;
+            margin: 0;
             -webkit-box-orient: vertical;
             height: 44px;
-            line-height: 22px;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -89,9 +102,9 @@ export default {
     }
     /deep/.swiper-pagination{
       position: absolute;
-      left:40%;
+      left:35%;
       bottom: -15px;
-      width: 20%;
+      width: 30%;
       font-size: 10px/2;
       height: 40px;
       line-height: 40px;

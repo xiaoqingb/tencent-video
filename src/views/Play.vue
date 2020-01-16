@@ -1,41 +1,58 @@
 <template>
   <div id="play">
-      <header>
-          <div id="header-left">
-              <div id="logo">
-              </div>
-          </div>
-          <div id="header-right">
-              <div class="search-btn">
-                    <font-awesome-icon icon="search" />
-              </div>
-              <div class="login-btn">
-                  登录
-              </div>
-              <div class="watch-entire-btn">
-                  看完整版
-              </div>
-          </div>
-      </header>
-      <div id="video-container">
-          <video
-            src="@/video/哄女友机器.mp4"
-            type="video/mp4" controls="controls"
-            controlslist="nodownload"
-            disablePictureInPicture="true"
-            x5-video-player-type="h5"
-            ></video>
-      </div>
-      <advertisement-swiper :content='advertiseContent'></advertisement-swiper>
+        <header>
+            <div id="header-left" @click="gobackHome">
+                <div id="logo">
+                </div>
+            </div>
+            <div id="header-right">
+                <div class="search-btn">
+                        <font-awesome-icon icon="search" />
+                </div>
+                <div class="login-btn">
+                    登录
+                </div>
+                <div class="watch-entire-btn">
+                    看完整版
+                </div>
+            </div>
+        </header>
+        <div id="video-container">
+            <video
+                src="@/video/哄女友机器.mp4"
+                type="video/mp4" controls="controls"
+                controlslist="nodownload"
+                disablePictureInPicture="true"
+                x5-video-player-type="h5"
+                ></video>
+        </div>
+        <advertisement-swiper :content='advertiseContent'></advertisement-swiper>
+        <video-msg :video="videoMsg"></video-msg>
+        <!-- 推荐 -->
+        <div id="recomment">
+            <list-title>为你推荐</list-title>
+            <!-- 内容 -->
+            <small-img
+            :content="videoList[0]"
+            :refresh="true"
+            ></small-img>
+        </div>
   </div>
 </template>
 
 <script>
-import AdvertisementSwiper from '@/components/AdvertisementSwiper.vue'
+import AdvertisementSwiper from '@/components/AdvertisementSwiper'
+import VideoMsg from './Play/VideoMsg'
+
+import SmallImg from '@/components/SmallImg'
+import ListTitle from '@/components/ListTitle'
 export default {
     name: 'Play',
     components: {
-        AdvertisementSwiper
+        AdvertisementSwiper,
+        VideoMsg,
+        SmallImg,
+        ListTitle
     },
     data(){
         return{
@@ -58,9 +75,75 @@ export default {
                 {
                     id: 3,
                     url: '//puui.qpic.cn/vpic/0/f30435mfhrg_160_90_3.jpg/0',
-                    content: '司理理白色衬衫太A了，她的腰封被别人当发带，这腰也太夸张了吧'
+                    content: '司理理白色衬衫太A了，她的腰封被别人当发带，这腰也太夸张了吧ssss'
+                },
+                {
+                    id: 4,
+                    url: '//i.gtimg.cn/qqlive/images/20190710/i1562744530_1.jpg',
+                    content: '看全集视频高清完整版',
+                    isSquare: true
                 }
+            ],
+            videoMsg: {
+                name: '通灵妃',
+                score: 7.8,
+                updateTo: 36,
+                count: 50,
+                playCount: '1.5亿'
+            },
+            videoList: [
+                [
+                    {
+                        id: 0,
+                        url: 'http://puui.qpic.cn/tv/0/495569203_498280/0',
+                        title: '新世界·新剧首播',
+                        content: '孙红雷结识民国五美闯北平',
+                        labelType: 1,
+                        label: 36
+                    },
+                    {
+                        id: 1,
+                        url: 'http://puui.qpic.cn/tv/0/496546186_498280/0',
+                        title: 'Beauty小姐·宋轶剧透',
+                        content: '《庆余年2》言冰云黑化？',
+                        labelType: 1,
+                        label: 4
+                    },
+                    {
+                        id: 2,
+                        url: 'http://puui.qpic.cn/tv/0/495776747_498280/0',
+                        title: '毒战生死线2·新片首播',
+                        content: '缉毒警枪林弹雨中血拼毒贩',
+                        labelType: 2,
+                        label: '2020-01-14'
+                    },
+                    {
+                        id: 3,
+                        url: 'http://puui.qpic.cn/tv/0/496506313_498280/0',
+                        title: '吐槽大会4·还珠格格',
+                        content: '卡姆模仿容嬷嬷吐槽陈志朋',
+                        labelType: 2,
+                        label: '2020-01-04'
+                    },
+                    {
+                        id: 4,
+                        url: 'http://puui.qpic.cn/tv/0/496588494_498280/0',
+                        title: '蓬莱间✨白宇新剧',
+                        content: '原地起跳吻 迟到千年的糖'
+                    },
+                    {
+                        id: 5,
+                        url: 'http://puui.qpic.cn/tv/0/490745124_498280/0',
+                        title: '边境线之冷焰·更新',
+                        content: '张猛许志强生死决战'
+                    }
+                ]
             ]
+        }
+    },
+    methods: {
+        gobackHome(){
+            this.$router.push({ name: 'Select' })
         }
     }
 }
@@ -115,5 +198,8 @@ export default {
         video{
             height: 100%;
         }
+    }
+    #recomment{
+        padding: 0 10px;
     }
 </style>
