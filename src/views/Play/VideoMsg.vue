@@ -40,7 +40,9 @@ export default {
     data(){
         return{
             swiperOption: {
-                freeMode: true
+                freeMode: true,
+                slidesPerView: 5,
+                freeModeMomentum: false
             }
         }
     }
@@ -48,9 +50,9 @@ export default {
 </script>
 
 <style lang='less' scoped>
-#video-msg{
-    padding: 0 10px;
-}
+    #video-msg{
+        padding: 0 10px;
+    }
     #base-msg{
         font-size: 13px;
         color: #848494;

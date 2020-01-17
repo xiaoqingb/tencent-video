@@ -17,32 +17,36 @@
                 </div>
             </div>
         </header>
-        <div id="video-container">
-            <video
+        <main>
+            <div id="video-container">
+                <video
                 src="@/video/哄女友机器.mp4"
                 type="video/mp4" controls="controls"
                 controlslist="nodownload"
                 disablePictureInPicture="true"
                 x5-video-player-type="h5"
                 ></video>
-        </div>
-        <advertisement-swiper :content='advertiseContent'></advertisement-swiper>
-        <video-msg :video="videoMsg"></video-msg>
-        <!-- 推荐 -->
-        <div id="recomment">
-            <list-title>为你推荐</list-title>
-            <!-- 内容 -->
-            <small-img
-            :content="videoList[0]"
-            :refresh="true"
-            ></small-img>
-        </div>
+            </div>
+            <advertisement-swiper :content='advertiseContent'></advertisement-swiper>
+            <video-msg :video="videoMsg"></video-msg>
+            <!-- 推荐 -->
+            <div id="recomment">
+                <list-title>为你推荐</list-title>
+                <!-- 内容 -->
+                <small-img
+                :content="videoList[0]"
+                :refresh="true"
+                ></small-img>
+            </div>
+            <flower-pice :content='flowerPice'></flower-pice>
+        </main>
   </div>
 </template>
 
 <script>
 import AdvertisementSwiper from '@/components/AdvertisementSwiper'
 import VideoMsg from './Play/VideoMsg'
+import FlowerPice from './Play/FlowerPice'
 
 import SmallImg from '@/components/SmallImg'
 import ListTitle from '@/components/ListTitle'
@@ -52,7 +56,8 @@ export default {
         AdvertisementSwiper,
         VideoMsg,
         SmallImg,
-        ListTitle
+        ListTitle,
+        FlowerPice
     },
     data(){
         return{
@@ -138,6 +143,44 @@ export default {
                         content: '张猛许志强生死决战'
                     }
                 ]
+            ],
+            flowerPice: [
+                {
+                    id: 0,
+                    time: '02:40',
+                    content: '【现代版庆余年】回到现代带感商战，为南庆集团打call',
+                    url: '//puui.qpic.cn/vpic/0/s30523vftij_160_90_3.jpg/0?max_age=7776000'
+                },
+                {
+                    id: 1,
+                    time: '09:43',
+                    content: '《庆余年》收官：故事未尽，感恩相伴；期盼余年，与君重逢',
+                    url: '//puui.qpic.cn/vpic/0/i0033gz8p9t_160_90_3.jpg/0?max_age=7776000'
+                },
+                {
+                    id: 2,
+                    time: '03:42',
+                    content: '《庆余年》收官番外之倒看全剧：竟别样精彩，笑秃！',
+                    url: '//puui.qpic.cn/vpic/0/n3048igrpe6_160_90_3.jpg/0?max_age=7776000'
+                },
+                {
+                    id: 3,
+                    time: '02:47',
+                    content: '《庆余年》收官，用肖战《问情》回顾小言公子虐恋',
+                    url: '//puui.qpic.cn/vpic/0/v3050zpwq5h_160_90_3.jpg/0?max_age=7776000'
+                },
+                {
+                    id: 4,
+                    time: '03:42',
+                    content: '《庆余年》收官番外之倒看全剧：竟别样精彩，笑秃！',
+                    url: '//puui.qpic.cn/vpic/0/n3048igrpe6_160_90_3.jpg/0?max_age=7776000'
+                },
+                {
+                    id: 5,
+                    time: '02:47',
+                    content: '《庆余年》收官，用肖战《问情》回顾小言公子虐恋',
+                    url: '//puui.qpic.cn/vpic/0/v3050zpwq5h_160_90_3.jpg/0?max_age=7776000'
+                }
             ]
         }
     },
