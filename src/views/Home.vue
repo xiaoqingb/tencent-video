@@ -88,17 +88,17 @@ export default {
                 {
                     id: 5,
                     name: '娱乐',
-                    label: 'Entertainment'
+                    label: 'Variety'
                 },
                 {
                     id: 6,
                     name: '潮音',
-                    label: 'Music'
+                    label: 'Documentary'
                 },
                 {
                     id: 7,
                     name: '游戏',
-                    label: 'Game'
+                    label: 'Variety'
                 },
                 {
                     id: 8,

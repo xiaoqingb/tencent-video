@@ -183,7 +183,7 @@ header{
         flex: 1;
         margin: 5px 10px;
         box-sizing: border-box;
-        height: 50px;
+        height: 35px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -191,7 +191,7 @@ header{
         border-radius: 30px;
         #search-box-inner{
             width: 99%;
-            height: 46px;
+            height: 30px;
             background: #fff;
             border-radius: 33px;
             padding: 10px;
