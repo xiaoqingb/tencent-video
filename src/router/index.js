@@ -74,6 +74,11 @@ const routes = [
         name: 'Play',
         path: '/play',
         component: () => import('@/views/Play.vue')
+    },
+    {
+        name: 'Search',
+        path: '/play',
+        component: () => import('@/views/Search.vue')
     }
 
 ]

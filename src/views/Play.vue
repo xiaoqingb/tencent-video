@@ -97,52 +97,52 @@ export default {
                 playCount: '1.5亿'
             },
             videoList: [
-                [
-                    {
-                        id: 0,
-                        url: 'http://puui.qpic.cn/tv/0/495569203_498280/0',
-                        title: '新世界·新剧首播',
-                        content: '孙红雷结识民国五美闯北平',
-                        labelType: 1,
-                        label: 36
-                    },
-                    {
-                        id: 1,
-                        url: 'http://puui.qpic.cn/tv/0/496546186_498280/0',
-                        title: 'Beauty小姐·宋轶剧透',
-                        content: '《庆余年2》言冰云黑化？',
-                        labelType: 1,
-                        label: 4
-                    },
-                    {
-                        id: 2,
-                        url: 'http://puui.qpic.cn/tv/0/495776747_498280/0',
-                        title: '毒战生死线2·新片首播',
-                        content: '缉毒警枪林弹雨中血拼毒贩',
-                        labelType: 2,
-                        label: '2020-01-14'
-                    },
-                    {
-                        id: 3,
-                        url: 'http://puui.qpic.cn/tv/0/496506313_498280/0',
-                        title: '吐槽大会4·还珠格格',
-                        content: '卡姆模仿容嬷嬷吐槽陈志朋',
-                        labelType: 2,
-                        label: '2020-01-04'
-                    },
-                    {
-                        id: 4,
-                        url: 'http://puui.qpic.cn/tv/0/496588494_498280/0',
-                        title: '蓬莱间✨白宇新剧',
-                        content: '原地起跳吻 迟到千年的糖'
-                    },
-                    {
-                        id: 5,
-                        url: 'http://puui.qpic.cn/tv/0/490745124_498280/0',
-                        title: '边境线之冷焰·更新',
-                        content: '张猛许志强生死决战'
-                    }
-                ]
+                // [
+                //     {
+                //         id: 0,
+                //         url: 'http://puui.qpic.cn/tv/0/495569203_498280/0',
+                //         title: '新世界·新剧首播',
+                //         content: '孙红雷结识民国五美闯北平',
+                //         labelType: 1,
+                //         label: 36
+                //     },
+                //     {
+                //         id: 1,
+                //         url: 'http://puui.qpic.cn/tv/0/496546186_498280/0',
+                //         title: 'Beauty小姐·宋轶剧透',
+                //         content: '《庆余年2》言冰云黑化？',
+                //         labelType: 1,
+                //         label: 4
+                //     },
+                //     {
+                //         id: 2,
+                //         url: 'http://puui.qpic.cn/tv/0/495776747_498280/0',
+                //         title: '毒战生死线2·新片首播',
+                //         content: '缉毒警枪林弹雨中血拼毒贩',
+                //         labelType: 2,
+                //         label: '2020-01-14'
+                //     },
+                //     {
+                //         id: 3,
+                //         url: 'http://puui.qpic.cn/tv/0/496506313_498280/0',
+                //         title: '吐槽大会4·还珠格格',
+                //         content: '卡姆模仿容嬷嬷吐槽陈志朋',
+                //         labelType: 2,
+                //         label: '2020-01-04'
+                //     },
+                //     {
+                //         id: 4,
+                //         url: 'http://puui.qpic.cn/tv/0/496588494_498280/0',
+                //         title: '蓬莱间✨白宇新剧',
+                //         content: '原地起跳吻 迟到千年的糖'
+                //     },
+                //     {
+                //         id: 5,
+                //         url: 'http://puui.qpic.cn/tv/0/490745124_498280/0',
+                //         title: '边境线之冷焰·更新',
+                //         content: '张猛许志强生死决战'
+                //     }
+                // ]
             ],
             flowerPice: [
                 {
@@ -187,7 +187,19 @@ export default {
     methods: {
         gobackHome(){
             this.$router.push({ name: 'Select' })
+        },
+        getData(){
+            this.axios.get('https://www.shuipingguo.com/getvideo/?type=1')
+                .then((response) => {
+                    this.videoList[0] = response.data.data[2].list
+                    console.log(this.videoList)
+                }).catch((err) => {
+                    console.log(err)
+                })
         }
+    },
+    created(){
+        this.getData()
     }
 }
 </script>

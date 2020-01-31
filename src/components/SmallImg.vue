@@ -11,25 +11,25 @@
           @click="play()">
                 <!-- 图片里包着一个标签 -->
                 <div class="img-container">
-                    <img :src="item.url" alt="" >
-                    <span class="label" v-if="item.labelType === 0">全{{item.label}}集</span>
-                    <span class="label" v-if="item.labelType === 1">更新至{{item.label}}集</span>
-                    <span class="label" v-if="item.labelType === 2">{{item.label}}</span>
-                    <span class="label" v-if="item.labelType === 3">{{item.label}}</span>
+                    <img :src="item.img" alt="" >
+                    <!-- <span class="label" v-if="item.labelType === 0">全{{item.label}}集</span> -->
+                    <!-- <span class="label" v-if="item.labelType === 1">更新至{{item.label}}集</span> -->
+                    <span class="label" v-if="item.score !== 0">{{item.score}}</span>
+                    <!-- <span class="label" v-if="item.score === 3">{{item.label}}</span> -->
                 </div>
                 <!-- 视频名称 -->
                 <p class="video-title">
-                    {{item.title}}
+                    {{item.name}}
                 </p>
                 <!-- 视频描述 -->
                 <p class="video-decoration">
-                    {{item.content}}
+                    {{item.summary}}
                 </p>
 
           </li>
       </ul>
       <!-- 通过refresh判断是否需要添加刷新按钮 -->
-      <div class='refresh' v-if="refresh">
+      <div class='refresh' v-if="true">
             <font-awesome-icon class="icon" icon="sync-alt" />
             <span>换一换</span>
       </div>

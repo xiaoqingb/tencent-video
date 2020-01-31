@@ -4,7 +4,7 @@
         <header>
             <div id='header-top'>
                 <img src="//puui.qpic.cn/vupload/0/1570516378024_vr59hnsql8.png/0" alt="" srcset="">
-                <div id="search-box">
+                <div id="search-box" @click="search">
                     <p>
                         蓬莱间
                     </p>
@@ -28,6 +28,8 @@
                 </swiper>
             </div>
         </header>
+        
+        <!-- 内容 -->
         <main>
             <keep-alive>
                 <router-view></router-view>
@@ -115,6 +117,9 @@ export default {
                 this.focusList = []
                 this.focusList[id] = true
             }
+        },
+        search(){
+            this.$router.push({ name: 'Search' })
         }
     }
 }

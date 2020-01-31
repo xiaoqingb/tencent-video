@@ -2,5 +2,7 @@ export {
     faSearch,
     faSyncAlt,
     faHeart,
-    faDownload
+    faDownload,
+    faArrowUp,
+    faArrowDown
 } from '@fortawesome/free-solid-svg-icons'

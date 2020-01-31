@@ -41,7 +41,7 @@ export default {
     background: linear-gradient(#fff, #eaebec);
     #swiper-container{
         width: 100%;
-        box-sizing: border-box;
+        // box-sizing: border-box;
         padding: 0 1px;
         height: 100%;
         .slide-item{

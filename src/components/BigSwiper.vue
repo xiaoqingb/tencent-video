@@ -3,8 +3,8 @@
     <swiper id="swiper-container" :options="swiperOption">
       <!-- slides -->
       <swiper-slide class="slide-item" v-for="item in content" :key="item.id">
-        <img :src="item.url" alt="">
-        <p>{{item.content}}</p>
+        <img :src="item.img" alt="">
+        <p>{{item.summary}}</p>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
