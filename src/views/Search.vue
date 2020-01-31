@@ -167,7 +167,7 @@ export default {
     },
     methods: {
         returnHome(){
-            this.$router.push({ name: 'Select' })
+            this.$router.push({ path: '/' })
         }
     }
 }

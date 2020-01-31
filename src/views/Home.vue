@@ -31,9 +31,9 @@
         
         <!-- 内容 -->
         <main>
-            <keep-alive>
+            <!-- <keep-alive> -->
                 <router-view></router-view>
-            </keep-alive>
+            <!-- </keep-alive> -->
         </main>
     </div>
 </template>
@@ -137,6 +137,8 @@ export default {
         top: 0;
         left: 0;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
         padding: 10px 10px 0 10px;
         overflow: hidden;
         width: 100%;
@@ -144,6 +146,7 @@ export default {
         background: #ffffff;
         #header-top{
             display: flex;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
             height: 30px;

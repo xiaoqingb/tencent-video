@@ -11,7 +11,7 @@ const routes = [
             {
                 // 例子
                 path: '/',
-                name: 'select',
+                name: 'Select',
                 component: () => import('@/views/Home/Select.vue')
             },
             {
@@ -77,7 +77,7 @@ const routes = [
     },
     {
         name: 'Search',
-        path: '/play',
+        path: '/search',
         component: () => import('@/views/Search.vue')
     }
 
