@@ -1,3 +1,3 @@
-module.export = {
-    publicPath: '/tencent-video-show/'
+module.exports = {
+    publicPath: process.env.NODE_ENV === 'production' ? '/tencent-video-show/' : '/'
 }

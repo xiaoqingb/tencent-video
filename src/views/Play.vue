@@ -192,9 +192,6 @@ export default {
             this.axios.get('https://www.shuipingguo.com/getvideo/?type=1')
                 .then((response) => {
                     this.videoList[0] = response.data.data[2].list
-                    console.log(this.videoList)
-                }).catch((err) => {
-                    console.log(err)
                 })
         }
     },
