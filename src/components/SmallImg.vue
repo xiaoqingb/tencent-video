@@ -222,6 +222,6 @@ export default {
         }
     }
     .item{
-        flex-direction: column;
+        flex-direction: column ;
     }
 </style>

@@ -197,9 +197,6 @@ export default {
                     this.bigFrameContent = response.data.data[0].list
                     this.videoList[0] = response.data.data[1].list
                     this.videoList[1] = response.data.data[2].list
-                    console.log(response)
-                }).catch((err) => {
-                    console.log(err)
                 })
         }
     },
@@ -215,6 +212,16 @@ export default {
             list-style: none;
             margin: 0;
             padding: 0 10px;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0 10px;
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     }
 </style>

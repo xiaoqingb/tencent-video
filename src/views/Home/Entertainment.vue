@@ -200,5 +200,15 @@ export default {
             margin: 0;
             padding: 0 10px;
         }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0 10px;
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     }
 </style>
