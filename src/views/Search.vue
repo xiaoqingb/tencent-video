@@ -8,7 +8,7 @@
                   <p>x</p>
               </div>
           </div>
-          <div id="return">
+          <div id="return" @click="returnHome">
               <span>返回</span>
           </div>
       </header>
@@ -163,6 +163,11 @@ export default {
                     buff: 1
                 }
             ]
+        }
+    },
+    methods: {
+        returnHome(){
+            this.$router.push({ name: 'Select' })
         }
     }
 }
