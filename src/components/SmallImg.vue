@@ -3,6 +3,7 @@
       <ul class="video-list">
           <!-- 通过判断isBig来决定大小图 -->
           <li
+          class="item"
           :class="{ 'video':!item.isBig && !item.isLong,
                     'largeimg':item.isBig,
                     'longimg':item.isLong}"
@@ -19,7 +20,7 @@
                 </div>
                 <!-- 视频名称 -->
                 <p class="video-title">
-                    {{item.name}}
+                    {{item.name}}sss
                 </p>
                 <!-- 视频描述 -->
                 <p class="video-decoration">
@@ -62,49 +63,6 @@ export default {
 <style lang='less' scoped>
     #small-img{
         width: 100%;
-        .big-img{
-            width: 100%;
-            margin-top: 5px;
-             .img-container{
-                    position: relative;
-                    img{
-                        width: 100%;
-                        height: 190px;
-                    }
-                    .label{
-                        position: absolute;
-                        bottom: 4px;
-                        right: 2px;
-                        padding: 2px 3px;
-                        background-color:rgba(162,162,182,.5);
-                        color:#fff;
-                        font-size: 10px;
-                        border-radius: 2px;
-
-                    }
-                }
-            
-            p{
-                margin: 0;
-                width: 100%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .video-title{
-                margin-top: 6px;
-                color: #000028;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            .video-decoration{
-                margin-top: 4px;
-                color: #a2a2b6;
-                font-size: 12px;
-                line-height: 18px;
-            }
-
-        }
         .video-list{
             display: flex;
             flex-wrap: wrap;
@@ -116,6 +74,11 @@ export default {
                 list-style: none;
                 box-sizing: border-box;
                 margin-bottom: 5px;
+                li{
+                    // display: flex;
+                    flex-direction: column;
+                    // align-items: flex-start;
+                }
             }
             .video{
                 list-style: none;
@@ -257,5 +220,8 @@ export default {
                 vertical-align: middle;
             }
         }
+    }
+    .item{
+        flex-direction: column;
     }
 </style>

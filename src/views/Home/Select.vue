@@ -215,6 +215,11 @@ export default {
             list-style: none;
             margin: 0;
             padding: 0 10px;
+            li{
+                display: flex;
+                flex-direction: column;
+                text-align: start;
+            }
         }
     }
 </style>
