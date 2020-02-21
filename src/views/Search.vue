@@ -194,6 +194,8 @@ header{
         align-items: center;
         background: -webkit-gradient(linear,left top,right top,color-stop(0,#5dcf0c),color-stop(30%,#2dbe8f),color-stop(100%,#03b0ff));
         border-radius: 30px;
+        overflow: hidden;
+
         #search-box-inner{
             width: 99%;
             height: 30px;
@@ -204,6 +206,7 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
             input{
                 width: 88%;
                 height: 25px;

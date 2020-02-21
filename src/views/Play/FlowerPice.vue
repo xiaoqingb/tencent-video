@@ -41,7 +41,7 @@ export default {
     background: linear-gradient(#fff, #eaebec);
     #swiper-container{
         width: 100%;
-        // box-sizing: border-box;
+        box-sizing: border-box;
         padding: 0 1px;
         height: 100%;
         .slide-item{
@@ -51,25 +51,25 @@ export default {
             display: flex;
             flex-direction: column;
             align-items: center;
-          .rectangle{
-            width: 85px;
-            height: 48px;
-            border-radius: 5px;
-          }
-          .img-container{
-              position: relative;
-              img{
-                  width: 100%;
-                  height: 75px;
-              }
-             .time{
-                position: absolute;
-                bottom: 2px;
-                right: 4px;
-                font-size: 14px;
-                color: #fff;
+            .rectangle{
+              width: 85px;
+              height: 48px;
+              border-radius: 5px;
             }
-          }
+            .img-container{
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 75px;
+                }
+              .time{
+                  position: absolute;
+                  bottom: 2px;
+                  right: 4px;
+                  font-size: 14px;
+                  color: #fff;
+              }
+            }
         
           p{
             height: 40px;

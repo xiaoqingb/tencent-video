@@ -30,10 +30,10 @@
           </li>
       </ul>
       <!-- 通过refresh判断是否需要添加刷新按钮 -->
-      <div class='refresh' v-if="true">
+      <!-- <div class='refresh' v-if="true">
             <font-awesome-icon class="icon" icon="sync-alt" />
             <span>换一换</span>
-      </div>
+      </div> -->
   </div>
 </template>
 
@@ -41,8 +41,7 @@
 export default {
     name: 'SmallImg',
     props: {
-        content: Array,
-        refresh: Boolean
+        content: Array
     },
     data(){
         return{

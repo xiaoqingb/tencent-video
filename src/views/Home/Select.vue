@@ -2,7 +2,7 @@
     <div id="select">
         <!-- 轮播图 -->
         <div class="swiper">
-            <big-swiper :content="bigFrameContent"></big-swiper>
+            <big-swiper :content="this.type[1]"></big-swiper>
         </div>
         <!-- 通过一个vfor多次调用视频组件，简单干净 -->
         <ul>
@@ -25,13 +25,23 @@ import SmallImg from '@/components/SmallImg'
 import ListTitle from '@/components/ListTitle'
 export default {
     name: 'Select',
+    props: {
+        type: Number
+    },
     components: {
         BigSwiper,
         SmallImg,
         ListTitle
     },
+    computed: {
+        currentType(){
+            let a = this.type
+            return a
+        }
+    },
     data(){
         return{
+            currentData: this.data,
             // 轮播图内容
             bigFrameContent: [
                 {
@@ -191,17 +201,16 @@ export default {
         }
     },
     methods: {
-        getData(){
-            this.axios.get('https://www.shuipingguo.com/getvideo/?type=1')
-                .then((response) => {
-                    this.bigFrameContent = response.data.data[0].list
-                    this.videoList[0] = response.data.data[1].list
-                    this.videoList[1] = response.data.data[2].list
-                })
-        }
+        // getData(){
+        //     this.axios.get('https://www.shuipingguo.com/getvideo/?type=1')
+        //         .then((response) => {
+        //             this.bigFrameContent = response.data.data[0].list
+        //             this.videoList[0] = response.data.data[1].list
+        //             this.videoList[1] = response.data.data[2].list
+        //         })
+        // }
     },
-    created(){
-        this.getData()
+    mounted(){
     }
 }
 </script>
